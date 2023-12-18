@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, GridItem, Show } from "@chakra-ui/react";
+import { Box, Button, Flex, Grid, GridItem, Show } from "@chakra-ui/react";
 import Navbar from "./components/NavBar";
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
@@ -14,6 +14,8 @@ export interface GameQuery {
   platform: Platform;
   sortOrder: string;
   searchText: string;
+  page: number;
+  pageSize: number;
 }
 
 function App() {
