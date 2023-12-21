@@ -14,11 +14,17 @@ const axiosInstance = axios.create({
 
 class APIClient<T>{
     endpoinet: string;
+
     constructor(endpoint: string) {
         this.endpoinet = endpoint
     }
+
     getAll = (config?: AxiosRequestConfig) => {
         return axiosInstance.get<FetchResponse<T>>(this.endpoinet, config).then(res => res.data)
+    }
+
+    get = (id: number | string) => {
+        return axiosInstance.get<T>(this.endpoinet + "/" + id).then(res => res.data)
     }
 }
 
