@@ -1,13 +1,6 @@
 import { useQuery } from "@tanstack/react-query"
-import axios from "axios"
 import APIClient from "../services/api-client";
-import { Game } from "./useGames";
-
-interface gameDetail {
-    id: number;
-    name: string;
-    description_raw: string
-}
+import { Game } from "../entities/Game";
 
 const apiClient = new APIClient<Game>("/games");
 
